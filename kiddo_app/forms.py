@@ -12,6 +12,10 @@ class RegisterForm(ModelForm):
             "name": "Nombre",
             "lastname": "Apellido",
             "emailid": "Email Id",
-            "phoneNum": "Teléfono",
-            "password": "Password"            
-        }
+            "nacimiento": "Fecha de Nacimiento",
+            "telefono": "Teléfono",
+            "pais_origen_id": "País",
+            "password": "Password",
+}
+
+ 

@@ -24,5 +24,5 @@ urlpatterns = [
     # Para cambiar el path de la 1era vista
     path('home', views.homepage), 
     # Para añadir el path de la app 
-    path('', include('groceries_app.urls'))
+    path('', include('kiddo_app.urls'))
 ]
