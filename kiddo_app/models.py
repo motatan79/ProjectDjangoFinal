@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-# Este es el equivalente al Modelo Entidad Relación en SQL (REM)
+# Este es el equivalente al Modelo Entidad Relación en SQL (ERM)
 
 class Pais(models.Model):
     nombre = models.CharField(max_length = 100)
