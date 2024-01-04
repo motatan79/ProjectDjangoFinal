@@ -15,6 +15,7 @@ class RegisterForm(ModelForm):
             "nacimiento": "Fecha de Nacimiento",
             "telefono": "Teléfono",
             "pais_origen_id": "País",
+            "tienda_id": "Tienda",
             "password": "Password",
 }
 
