@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <form action="" method="post">
+        <!-- Para proteger la página de falsificaciones de solicitudes entre sitios -->
+        {% csrf_token %}
+        {{form.as_p}}
+    <input type='submit' value='Submit'>
+    </form>
+    {% endblock %}
+</body>

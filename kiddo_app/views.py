@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import RegisterForm
+from .forms import RegisterForm, PaisForm, TiendaForm, EventoForm
 from django.contrib import messages
-from .models import RegisteredUser
+from .models import RegisteredUser, Pais, Tienda, Evento
 from django.core.exceptions import ObjectDoesNotExist 
 
 
@@ -84,4 +84,41 @@ def logout(request):
     del usrnme
     return render(request, "logout.html")
 
+
+def pais(request):
+    if request.method == "POST":
+        form = PaisForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "País creado exitósamente")
+            return redirect("registrarpais")
+    else:
+        form = PaisForm()
+        user_info = {'form': form}
+        return render(request, "registerpais.html", user_info)
+    
+    
+def tienda(request):
+    if request.method == "POST":
+        form = TiendaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Tienda creada exitósamente")
+            return redirect("registrartienda")
+    else:
+        form = TiendaForm()
+        user_info = {'form': form}
+        return render(request, "registertienda.html", user_info)
+
+def evento(request):
+    if request.method == "POST":
+        form = EventoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Evento creado exitósamente")
+            return redirect("registrarevento")
+    else:
+        form = EventoForm()
+        user_info = {'form': form}
+        return render(request, "registerevento.html", user_info)
 
