@@ -127,3 +127,6 @@ def registrados(request):
     clientes = RegisteredUser.objects.all()
     return render(request, "registrados.html", {"clientes": clientes})
 
+def eventosagendados(request):
+    eventos_agendados = Evento.objects.all()
+    return render(request, "eventosagendados.html", {"eventos_agendados": eventos_agendados})

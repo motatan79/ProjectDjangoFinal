@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <h2> Eventos Agendados </h2>
+    <ul>
+        {% for eventos in eventos_agendados  %}
+            <h2> Nombre Patrocinante: {{ eventos.patrocinante }} </h2>     
+            <li> Nombre Tienda: {{ eventos.tienda_id}} </li>
+            <li> País: {{ eventos.pais_origen_id}} </li>
+            <li> Día del Evento: {{ eventos.dia}} </li>
+            <li> Gratis: {{ eventos.gratis}} </li>
+            <li> Cuota Participacion: {{ eventos.cuota_participacion}} </li>
+
+            
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
