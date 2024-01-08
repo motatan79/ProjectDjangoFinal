@@ -48,6 +48,7 @@ class RegisteredUser(models.Model):
     pais_origen_id = models.ForeignKey(Pais, null = True, blank = True, on_delete = models.SET_NULL, verbose_name = 'País de origen')
     tienda_id = models.ForeignKey(Tienda, null = True, blank = True, on_delete = models.SET_NULL, verbose_name = 'Tiendas')
     password = models.CharField(max_length=30)
+    dueño_tienda =  models.BooleanField()
     
     def __str__(self) -> str:
         return f'{self.lastname}, {self.name}'
