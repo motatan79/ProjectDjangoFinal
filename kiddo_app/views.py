@@ -121,4 +121,9 @@ def evento(request):
         form = EventoForm()
         user_info = {'form': form}
         return render(request, "registerevento.html", user_info)
+    
+    
+def registrados(request):
+    clientes = RegisteredUser.objects.all()
+    return render(request, "registrados.html", {"clientes": clientes})
 

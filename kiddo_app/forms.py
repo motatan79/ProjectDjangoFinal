@@ -17,6 +17,7 @@ class RegisterForm(ModelForm):
             "nacimiento": "Fecha de Nacimiento",
             "pais_origen_id": "País",
             "tienda_id": "Tienda",
+            "dueño_tienda": "Dueño",
             
 }
 
