@@ -2,11 +2,43 @@
 
 <body>
     {% block content %}
-    <h2> Swapper Registrados </h2>
-    <ul>
-        {% for cliente in clientes  %}
-            <li>{{ cliente.lastname }}, {{ cliente.name }}  </li>
-        {% endfor %}
-    </ul>    
+    <h2>Swapper Registrados</h2>
+    
+    <table border="4">
+        <thead>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Nacimiento</th>
+            <th>Dueño Tienda</th>
+            <th>País</th>
+            
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.lastname }}</td>
+                    <td>{{ cliente.name }}</td>
+                    {% if cliente.nacimiento %}
+                        <td>{{ cliente.nacimiento }}</td>
+                    {% else %}
+                        <td>Sin registro</td>
+                    {% endif %}
+                    {% if cliente.dueño_tienda %} 
+                        <td>Si</td>
+                    {% else %}
+                        <td>No</td>
+                    {% endif %}
+                    <td>{{ cliente.pais_origen_id }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a></a>
+    <a></a>
+    <a></a>
+    <a></a>
+    <a></a>
+
+    <button><a href="{% url 'app_homepage' %}">Atrás</a></button>
     {% endblock %}
 </body>

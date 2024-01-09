@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <h2> Tiendas Registradas </h2>
+    
+    <table border="4">
+        <thead>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Tipo de Tienda</th>
+            <th>Descripción</th>
+            
+            
+        </thead>
+        <tbody>
+            {% for tienda in tiendas %}
+                <tr>
+                    <td>{{ tienda.nombre }}</td>
+                    <td>{{ tienda.ciudad }}</td>
+                    <td>{{ tienda.tipo_de_tienda }}</td>
+                    <td>{{ tienda.descripcion }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button><a href="{% url 'app_homepage' %}">Atrás</a></button>
+    {% endblock %}
+</body>
