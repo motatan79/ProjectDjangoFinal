@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+<meta charset= 'utf-8'>
+<title>Kiddo Swapp</title>
+<style>
+    body{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed; 
+        background: black;
+        padding: 10px;
+        color: white;
+    }
+    .fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }
+    .container{
+        width: 100%;
+        margin: 40;
+    }
+    .column {
+        display: table;
+        float: left;
+        padding: 10px;
+        height: 400px;
+    }
+    .center {
+        width:400px;
+        text-align:center;
+        margin:0px auto;
+    }
+
+    nav a{
+        color: white;
+        text-decoration:  none;
+        padding: 7px 25px;
+        display: inline-block;
+    }
+</style>    
+</head>
+<body>
+    <div class='fixed-header'>
+        <div class= 'container'>
+            <nav>
+                <a href="{% url 'app_homepage' %}">KIDDO SWAP</a>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+                <a href="{% url 'register' %}">Cliente Swapper</a>
+                <a href="{% url 'registrarpais' %}">País</a>
+                <a href="{% url 'registrartienda' %}">Tienda</a><a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+            </nav>
+        </div>
+    </div>
+
+<main role='main' class='container'>
+    <div class='row'>
+        {% if messages %} 
+            {% for msg in messages %}
+            <div class = 'alert alert-{{ msg.taps }}'>
+                <p></p>
+                {{ msg }}
+                <p></p>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>    
+</main>
+<a></a>
+<a></a>
+<div class='container'>
+    {% block content %}
+
+
+    {% endblock %}
+</div>
+<div class='fixed-footer'>
+    <div class= 'container'>
+        <nav>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a href="{% url 'about_us' %}">Acerca de Nosotros</a>
+            <a href="{% url 'services' %}">Servicios</a>
+            <a href="{% url 'contact_us' %}">Contáctanos</a>
+        </nav>
+    </div>
+    <div class='container'>Copyright &copy; 2024 Kiddo Swap</div>
+</div>
+
+</body>
+</html>
+    
+    </body>
+</html>
