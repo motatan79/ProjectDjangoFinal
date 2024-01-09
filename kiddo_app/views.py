@@ -12,7 +12,9 @@ def app_homepage(request):
             userdetails = {'username': usrnme}
             return render(request, "loggedin.html", userdetails)
     except NameError:
-        return render(request, 'homepage.html')
+        return render(request, 'index.html')
+
+        #return render(request, 'homepage.html')
 
 def about_us(request):
     try:
@@ -134,3 +136,7 @@ def eventosagendados(request):
 def tiendas_registradas(request):
     tiendas = Tienda.objects.all()
     return render(request, "tiendas_registradas.html", {"tiendas": tiendas})
+
+def paises_registrados(request):
+    paises = Pais.objects.all()
+    return render(request, "paises_registrados.html", {"paises": paises})

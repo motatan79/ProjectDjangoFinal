@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<body>
+    {% block content %}
+    <h2> Países Registrados </h2>
+    
+    <table border="4">
+        <thead>
+            <th>Nombre</th>
+        </thead>
+        <tbody>
+            {% for pais in paises %}
+                <tr>
+                    <td>{{ pais.nombre }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button><a href="{% url 'app_homepage' %}">Atrás</a></button>
+    {% endblock %}
+</body>

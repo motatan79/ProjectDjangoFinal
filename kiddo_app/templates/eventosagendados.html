@@ -3,15 +3,28 @@
 <body>
     {% block content %}
     <h2> Eventos Agendados </h2>
-    <ul>
-        {% for eventos in eventos_agendados  %}
-            <h2> Nombre Patrocinante: {{ eventos.patrocinante }} </h2>     
-            <li> Nombre Tienda: {{ eventos.tienda_id}} </li>
-            <li> País: {{ eventos.pais_origen_id}} </li>
-            <li> Día del Evento: {{ eventos.dia}} </li>
-            <li> Gratis: {{ eventos.gratis}} </li>
-            <li> Cuota Participacion: {{ eventos.cuota_participacion}} </li>
-        {% endfor %}
-    </ul>
+    <table border="4">
+        <thead>
+            <th>Patrocinante</th>
+            <th>Tienda</th>
+            <th>País</th>
+            <th>Día Evento</th>
+            <th>Gratis</th>
+            <th>Cuota Participación</th>
+        </thead>
+        <tbody>
+            {% for evento in eventos_agendados %}
+                <tr>
+                    <td>{{ evento.patrocinante }}</td>
+                    <td>{{ evento.tienda_id }}</td>
+                    <td>{{ evento.pais_origen_id }}</td>
+                    <td>{{ evento.dia_evento }}</td>
+                    <td>{{ evento.gratis }}</td>
+                    <td>{{ evento.cuota_participacion }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button><a href="{% url 'app_homepage' %}">Atrás</a></button>
     {% endblock %}
 </body>
